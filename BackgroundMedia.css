@@ -135,7 +135,7 @@ nav .fas{
     display: none;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 480px){
     #header{
         background-color: #262626;
     }
@@ -192,6 +192,9 @@ nav .fas{
     }
     .copyright{
         font-size: 14px;
+    }
+    .container{
+        max-width: 100%;
     }
 }
 #msg{
