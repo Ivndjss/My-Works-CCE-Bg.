@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset ="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="BackgroundMedia.css">
+    <script src="https://kit.fontawesome.com/ff64637a6f.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="header">
+    <div class="container">
+
+        <nav>
+            <a href="https://ivndjss.github.io/IvndjssG4-website/"><img src="logo-no-background.png" class="logo"></a>
+            <ul id="sidemenu">
+                <li><a href="https://ivndjss.github.io/IvndjssG4-website/">Home</a></li>
+                <li><a href="https://ivndjss.github.io/IvndjssG4-website/#about">About</a></li>
+                <li><a href="https://ivndjss.github.io/IvndjssG4-website/#services">Services</a></li>
+                <li><a href="https://ivndjss.github.io/IvndjssG4-website/#portfolio">Portfolio</a></li>
+                <li><a href="https://ivndjss.github.io/IvndjssG4-website/#contact">Contact</a></li>
+                <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+</div>
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/background.png">
+                <div class="layer">
+                    <h3>Background Media</h3>
+                    <p>this is the background of our College Department</p>
+                </div>
+            </div>
+        </div>
+        <a href="https://ivndjss.github.io/IvndjssG4-website/" class="btn">See more</a>
+    </div>
+</div>
+    <script>
+
+            var tablinks = document.getElementsByClassName("tab-links")
+            var tabcontents = document.getElementsByClassName("tab-contents")
+        
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link")
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab")
+                }
+        
+                event.currentTarget.classList.add("active-link")
+                document.getElementById(tabname).classList.add("active-tab")
+            }
+        
+    </script>
+    <script>
+        
+            var sidemenu = document.getElementById("sidemenu");
+        
+            function openmenu(){
+                sidemenu.style.right = "0";
+            }
+            function closemenu(){
+                sidemenu.style.right = "-200px";
+            }
+    </script>
+    <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwg1fv8io8PTlIqk_avWG6YN2S_clXHbhOvepVQQWXph--AzpDb_QtOPaTPRbFGdfMAww/exec'
+            const form = document.forms['submit-to-google-sheet']
+            constmsg = document.getElementById("msg")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+    </script>
+        
+</body>
+</html>
